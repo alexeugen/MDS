@@ -5,34 +5,32 @@ from django.shortcuts import render
 #a list of dictionaries
 posts = [
     {
-        'author' : 'Andreea',
-        'title' : 'Blog post 1',
-        'content' : 'First post content',
-        'date_posted' : 'March 20, 2018'
+        "titlu" : "The Trail to Oregon",
+        "regie" : "Andrei Alexandrescu",
+        "actori" : "Mircea, Andrei, Mihai",
+        "descriere" : "A comedy about the life of the people who searched for a better life by heading to Oregon",
+        "locatie" : "Teatrul Maria Filotti",
+        "data" : "23 Septembrie 2019, Ora 13:30",
+        "img" : "/imgs/poster1.jpg" ,
+        "background": "/imgs/background1.jpg"
     },
     {
-        'author': 'Danut',
-        'title': 'Blog post 2',
-        'content': 'Second post content',
-        'date_posted': 'March 21, 2018'
+        "titlu" : "Firebringer",
+        "regie" : "Andrei Alexandrescu",
+        "actori" : "Mircea, Alex, Mihai",
+        "descriere" : "A comedy about the life of the people who searched for a better life by heading to Oregon A comedy about the life of the people who searched for a better life by heading to Oregon ",
+        "locatie" : "Teatrul Maria Filotti",
+        "data" : "23 Septembrie 2029, Ora 13:30",
+        "img" : "/imgs/poster2.jpg" ,
+        "background": "/imgs/background2.jpg"
     }
 ]
 
 def home(request):
-    #context dictionary
+    # context dictionary
     context = {
-        'posts' : posts
+        'posts': posts
     }
     return render(request, 'tickets_app/home.html', context)
-
 def about(request):
     return render(request, 'tickets_app/about.html')
-
-def login(request):
-    return render(request, 'tickets_app/login.html')
-
-def register(request):
-    return render(request, 'tickets_app/register.html')
-
-
-

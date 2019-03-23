@@ -6,8 +6,6 @@ urlpatterns = [
     path('', views.home, name='tickets-home'),
     #about page
     path('about/', views.about, name='tickets-about'),
-    #login page
-    path('login/', views.login, name='tickets-login'),
-    #register page
-    path('register/', views.register, name='tickets-register'),
+    path('register/', views.about, name='tickets-register'),
+    path('login/', views.about, name='tickets-login'),
 ]

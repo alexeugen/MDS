@@ -1,0 +1,54 @@
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'users/login_register.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Serif+JP" rel="stylesheet">
+
+    <title>{{ title }}</title>
+</head>
+<body>
+
+{% block content %}
+      <div class="login-box">
+          <form method="POST" novalidate>
+              <!--Security token-->
+              {% csrf_token %}
+              {{form.non_field_errors}}
+              <fieldset class="form-group">
+                  {{form.subject.errors}}
+                  <legend class="style-txt">Login</legend>
+                  <div class="textbox">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                    <input type="text"
+                           placeholder="Username"
+                           name="{{form.username.name}}"
+                           id="{{form.username.id_for_label}}" required
+                           >
+                      {{form.username.errors}}
+                  </div>
+                  <div class="textbox">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <input type="password"
+                           placeholder="Password"
+                           name="{{form.password.name}}"
+                           id="{{form.password.id_for_label}}" required
+                           >{{form.password.errors}}
+                  </div>
+              </fieldset>
+              <div class="form-group">
+                  <button class="button btn btn-outline-info" type="submit">Sign in</button>
+              </div>
+          </form>
+          <div>
+              <small class="text-muted">Need an account? <a class="ml-2" href="{% url 'register' %}"> Sign Up Now</a></small>
+          </div>
+       </div>
+{% endblock content %}
+
+</body>
+</html>
