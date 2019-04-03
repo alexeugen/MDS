@@ -6,10 +6,10 @@
  <!-- BEGINNING OF SLIDESHOW -->
  <div id="slideshow">
 
-    <div id="prevSlide">&lt;</div>
+    <div id="prevSlide">&lt;</div> 
     {% for post in posts %}
     <div class="slide">
-        <img class="slideshow-background"
+        <img class="slideshow-background" 
             src="{%static 'tickets_app'%}{{post.background}}">
         <div class="slideshow-mask"></div>
         <div class="slideshow-body">
@@ -34,7 +34,11 @@
         </div>
     </div>
     {% endfor %}
+<<<<<<< HEAD
     <div id="nextSlide">&gt;</div>
+=======
+    <div id="nextSlide">&gt;</div> 
+>>>>>>> Added homepage
 </div>
 <!-- END OF SLIDESHOW -->
 <script src="{% static 'tickets_app/scripts/slideshow.js' %}"></script>
